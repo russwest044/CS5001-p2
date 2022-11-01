@@ -5,10 +5,18 @@ import stratego.CombatResult;
 import stratego.Player;
 import stratego.Square;
 
+/**
+ * A class to define Spy and implement its functions.
+ */
 public class Spy extends StepMover {
 
     // private PieceType type;
 
+    /**
+     * Constructor of Spy
+     * @param owner: the Player of the piece
+     * @param square: the square where the piece stands
+     */
     public Spy(Player player, Square square) {
         super(player, square, 0);
         // type = PieceType.Spy;

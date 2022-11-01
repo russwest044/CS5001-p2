@@ -5,8 +5,17 @@ import java.util.ArrayList;
 import stratego.Player;
 import stratego.Square;
 
+/**
+ * A class to define normal pieces called StepMover and implement its functions.
+ */
 public class StepMover extends Piece {
 
+    /**
+     * Constructor of StepMover
+     * @param owner: the Player of the piece
+     * @param square: the square where the piece stands
+     * @param rank: rank of the piece
+     */
     public StepMover(Player owner, Square square, int rank) {
         super(owner, square, rank);
     }

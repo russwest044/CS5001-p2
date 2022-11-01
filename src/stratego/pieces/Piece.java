@@ -6,12 +6,22 @@ import stratego.CombatResult;
 import stratego.Player;
 import stratego.Square;
 
+/**
+ * A class to define abstract Piece and implement its basic functions.
+ */
 public abstract class Piece {
     private Player owner;
     private Square square;
     private int rank;
     // private PieceType type;
 
+    /**
+     * Constructor of Piece.
+     * 
+     * @param owner: the Player of the piece
+     * @param square: the square where the piece stands
+     * @param rank: rank of piece
+     */
     public Piece(Player owner, Square square, int rank) {
         if (square.getPiece() != null) {
             throw new IllegalArgumentException();
@@ -127,8 +137,9 @@ public abstract class Piece {
             }
         }
     }
-
+    
     public void beCaptured() {
+        this.getSquare().removePiece();
         this.setSquare(null);
     }
 

@@ -1,5 +1,8 @@
 package stratego;
 
+/**
+ * A class to define Game and implement its functions.
+ */
 public class Game {
     public static int HEIGHT = 10;
     public static int WIDTH = 10;
@@ -11,6 +14,12 @@ public class Game {
 
     private static Square[][] GameBoard;
 
+    /**
+     * Constructor of Game and intialise the chessboard.
+     * 
+     * @param p0: Player0
+     * @param p1: Player1
+     */
     public Game(Player p0, Player p1) {
         this.p0 = p0;
         this.p1 = p1;
