@@ -64,12 +64,17 @@ public abstract class Piece {
         if (temp == CombatResult.WIN) {
             this.getSquare().removePiece();
             targetSquare.removePiece();
+            targetSquare.getPiece().beCaptured();
             targetSquare.placePiece(this);
         } else if (temp == CombatResult.LOSE) {
             this.getSquare().removePiece();
+            this.beCaptured();
             targetSquare.removePiece();
         } else {
             this.getSquare().removePiece();
+            this.beCaptured();
+            targetSquare.removePiece();
+            targetSquare.getPiece().beCaptured();
         }
     }
 
@@ -132,6 +137,7 @@ public abstract class Piece {
     }
 
     public void beCaptured() {
+        this.setSquare(null);
     }
 
     

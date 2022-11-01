@@ -4,6 +4,10 @@ package stratego.pieces;
 import stratego.Player;
 import stratego.Square;
 
+/**
+ * A special kind of piece that destroys itself and its attacker, except for miners.
+ */
+
 public class Bomb extends ImmobilePiece{
 
     // private PieceType type;
