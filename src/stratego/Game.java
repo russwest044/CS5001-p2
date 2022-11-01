@@ -9,7 +9,7 @@ public class Game{
     private Player p0;
     private Player p1;
 
-    private Square[][] GameBoard;
+    private static Square[][] GameBoard;
 
     public Game(Player p0, Player p1){
         this.p0 = p0;
