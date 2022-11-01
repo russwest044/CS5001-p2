@@ -62,9 +62,9 @@ public abstract class Piece {
     public void attackNormal(Square targetSquare) {
         CombatResult temp = resultWhenAttacking(targetSquare.getPiece());
         if (temp == CombatResult.WIN) {
+            targetSquare.getPiece().beCaptured();
             this.getSquare().removePiece();
             targetSquare.removePiece();
-            targetSquare.getPiece().beCaptured();
             targetSquare.placePiece(this);
         } else if (temp == CombatResult.LOSE) {
             this.getSquare().removePiece();
