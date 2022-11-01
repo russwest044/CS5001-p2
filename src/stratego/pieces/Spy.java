@@ -14,8 +14,8 @@ public class Spy extends StepMover {
 
     /**
      * Constructor of Spy
-     * @param owner: the Player of the piece
-     * @param square: the square where the piece stands
+     * @param owner the Player of the piece
+     * @param square the square where the piece stands
      */
     public Spy(Player player, Square square) {
         super(player, square, 0);

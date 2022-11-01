@@ -11,8 +11,8 @@ public class Flag extends ImmobilePiece {
     /**
      * Constructor of Bomb.
      * 
-     * @param owner: Player of the Flag piece
-     * @param square: the square where the Flag stands
+     * @param owner Player of the Flag piece
+     * @param square the square where the Flag stands
      */
     public Flag(Player owner, Square square) {
         super(owner, square, 0);

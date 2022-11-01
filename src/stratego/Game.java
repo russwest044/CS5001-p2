@@ -17,8 +17,8 @@ public class Game {
     /**
      * Constructor of Game and intialise the chessboard.
      * 
-     * @param p0: Player0
-     * @param p1: Player1
+     * @param p0 Player0
+     * @param p1 Player1
      */
     public Game(Player p0, Player p1) {
         this.p0 = p0;
@@ -30,9 +30,6 @@ public class Game {
         }
     }
 
-    /**
-     * @return boolean
-     */
     // public boolean setPiece(Player owner, int x, int y, int rank){
     // if(GameBoard[x][y].getPiece() != null){
     // return false;
@@ -41,6 +38,10 @@ public class Game {
     // return true;
     // }
 
+    /**
+     * The function to see if the square unit belongs to water area.
+     * @return boolean
+     */
     public boolean IsWater(int x, int y) {
         for (int i = 0; i < WATER_ROWS.length; i++) {
             for (int j = 0; j < WATER_ROWS.length; j++) {
@@ -53,6 +54,7 @@ public class Game {
     }
 
     /**
+     * The function to get current player.
      * @param playerNumber
      * @return Player
      */
@@ -65,6 +67,7 @@ public class Game {
     }
 
     /**
+     * The function to get winner.
      * @return Player
      */
     public Player getWinner() {
@@ -78,6 +81,7 @@ public class Game {
     }
 
     /**
+     * The function to get the location of a square unit.
      * @param row
      * @param col
      * @return Square

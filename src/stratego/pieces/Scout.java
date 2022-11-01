@@ -12,8 +12,8 @@ public class Scout extends Piece {
 
     /**
      * Constructor of Scout
-     * @param owner: the Player of the piece
-     * @param square: the square where the piece stands
+     * @param owner the Player of the piece
+     * @param square the square where the piece stands
      */
     public Scout(Player owner, Square square) {
         super(owner, square, 2);

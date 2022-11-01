@@ -15,8 +15,8 @@ public class Miner extends StepMover {
     /**
      * Constructor of StepMover.
      * 
-     * @param owner: Player of the miner piece
-     * @param square: the square where the piece stands
+     * @param owner Player of the miner piece
+     * @param square the square where the piece stands
      */
     public Miner(Player owner, Square square) {
         super(owner, square, 3);

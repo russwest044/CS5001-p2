@@ -13,9 +13,9 @@ public abstract class ImmobilePiece extends Piece {
     /**
      * Constructor of Bomb.
      * 
-     * @param owner: Player of the piece
-     * @param square: the square where the piece stands
-     * @param rank: in fact, ImmobliePiece does not have rank
+     * @param owner Player of the piece
+     * @param square the square where the piece stands
+     * @param rank in fact, ImmobliePiece does not have rank
      */
     public ImmobilePiece(Player owner, Square square, int rank) {
         super(owner, square, 0);

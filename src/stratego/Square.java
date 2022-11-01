@@ -15,10 +15,10 @@ public class Square {
     /**
      * Constructor of square.
      * 
-     * @param game: the game
-     * @param row: row number
-     * @param col: column number
-     * @param isWater: whether a piece can be put on the square
+     * @param game the game
+     * @param row row number
+     * @param col column number
+     * @param isWater whether a piece can be put on the square
      */
     public Square(Game game, int row, int col, boolean isWater) {
         this.game = game;
@@ -28,20 +28,25 @@ public class Square {
     }
 
     /**
-     * @param piece
+     * The function to place piece on current square.
+     * @param piece the piece that will be put on
      */
     public void placePiece(Piece piece) {
-        if (this.piece != null || this.isWater == true) {
+        if (this.piece != null || this.canBeEntered()) {
             throw new IllegalArgumentException();
         }
         this.piece = piece;
     }
 
+    /**
+     * The fuction to remove the piece on the current square.
+     */
     public void removePiece() {
         this.piece = null;
     }
 
     /**
+     * The function to get current game.
      * @return Game
      */
     public Game getGame() {
@@ -49,6 +54,7 @@ public class Square {
     }
 
     /**
+     * The function to get the piece that stands on current square.
      * @return Piece
      */
     public Piece getPiece() {
@@ -56,6 +62,7 @@ public class Square {
     }
 
     /**
+     * The function to get current row number
      * @return int
      */
     public int getRow() {
@@ -63,6 +70,7 @@ public class Square {
     }
 
     /**
+     * The function to get current colunmn number.
      * @return int
      */
     public int getCol() {
@@ -70,6 +78,7 @@ public class Square {
     }
 
     /**
+     * The function to decide whether the suare is in water area.
      * @return boolean
      */
     public boolean canBeEntered() {

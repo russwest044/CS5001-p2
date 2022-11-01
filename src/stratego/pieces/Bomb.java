@@ -14,8 +14,8 @@ public class Bomb extends ImmobilePiece {
     /**
      * Constructor of Bomb.
      * 
-     * @param owner: Player of the Bomb piece
-     * @param square: the square where the Bomb stands
+     * @param owner Player of the Bomb piece
+     * @param square the square where the Bomb stands
      */
     public Bomb(Player owner, Square square) {
         super(owner, square, 0);

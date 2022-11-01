@@ -18,9 +18,9 @@ public abstract class Piece {
     /**
      * Constructor of Piece.
      * 
-     * @param owner: the Player of the piece
-     * @param square: the square where the piece stands
-     * @param rank: rank of piece
+     * @param owner the Player of the piece
+     * @param square the square where the piece stands
+     * @param rank rank of piece
      */
     public Piece(Player owner, Square square, int rank) {
         if (square.getPiece() != null) {
@@ -37,6 +37,7 @@ public abstract class Piece {
     public abstract ArrayList<Square> getLegalAttacks();
 
     /**
+     * The function for pieces to make a move.
      * @param toSquare
      */
     public void move(Square toSquare) {
@@ -50,6 +51,7 @@ public abstract class Piece {
     }
 
     /**
+     * The function for pieces to make a attack.
      * @param targetSquare
      */
     public void attack(Square targetSquare) {
@@ -64,6 +66,7 @@ public abstract class Piece {
     }
 
     /**
+     * Attack normal StepMover pieces.
      * @param targetSquare
      */
     public void attackNormal(Square targetSquare) {
@@ -73,10 +76,10 @@ public abstract class Piece {
             this.getSquare().removePiece();
             targetSquare.removePiece();
             targetSquare.placePiece(this);
+            this.setSquare(targetSquare);
         } else if (temp == CombatResult.LOSE) {
             this.getSquare().removePiece();
             this.beCaptured();
-            targetSquare.removePiece();
         } else {
             this.getSquare().removePiece();
             this.beCaptured();
@@ -86,26 +89,32 @@ public abstract class Piece {
     }
 
     /**
+     * Attack normal Spy pieces.
      * @param targetSquare
      */
     public void attackSpy(Square targetSquare) {
         if (targetSquare.getPiece() instanceof Spy) {
+            targetSquare.getPiece().beCaptured();
             targetSquare.removePiece();
             this.move(targetSquare);
         }
     }
 
     /**
+     * Attack normal Bomb pieces.
      * @param targetSquare
      */
     public void attackBomb(Square targetSquare) {
         if (targetSquare.getPiece() instanceof Bomb) {
+            targetSquare.getPiece().beCaptured();
             targetSquare.removePiece();
             this.getSquare().removePiece();
+            this.beCaptured();
         }
     }
 
     /**
+     * Attack normal Flag pieces.
      * @param targetSquare
      */
     public void attackFlag(Square targetSquare) {
@@ -118,6 +127,7 @@ public abstract class Piece {
     }
 
     /**
+     * The function to get the result of combat.
      * @param targetPiece
      * @return CombatResult
      */
@@ -137,13 +147,17 @@ public abstract class Piece {
             }
         }
     }
-    
+
+    /**
+     * Once a piece is destoried, that means it is captured and it should be removed.
+     */
     public void beCaptured() {
         this.getSquare().removePiece();
         this.setSquare(null);
     }
 
     /**
+     * The function to get current square.
      * @return Square
      */
     public Square getSquare() {
@@ -151,6 +165,7 @@ public abstract class Piece {
     }
 
     /**
+     * The function to assign a square to the piece.
      * @param square
      */
     public void setSquare(Square square) {
@@ -158,6 +173,7 @@ public abstract class Piece {
     }
 
     /**
+     * The function to get current player.
      * @return Player
      */
     public Player getOwner() {
@@ -165,6 +181,7 @@ public abstract class Piece {
     }
 
     /**
+     * The function to get rank of current piece.
      * @return int
      */
     public int getRank() {
