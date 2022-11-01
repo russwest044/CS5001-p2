@@ -10,7 +10,7 @@ public abstract class Piece {
     private Player owner;
     private Square square;
     private int rank;
-    //private PieceType type;
+    // private PieceType type;
 
     public Piece(Player owner, Square square, int rank) {
         if (square.getPiece() != null) {
@@ -26,8 +26,7 @@ public abstract class Piece {
 
     public abstract ArrayList<Square> getLegalAttacks();
 
-    
-    /** 
+    /**
      * @param toSquare
      */
     public void move(Square toSquare) {
@@ -40,8 +39,7 @@ public abstract class Piece {
         }
     }
 
-    
-    /** 
+    /**
      * @param targetSquare
      */
     public void attack(Square targetSquare) {
@@ -55,8 +53,7 @@ public abstract class Piece {
         }
     }
 
-    
-    /** 
+    /**
      * @param targetSquare
      */
     public void attackNormal(Square targetSquare) {
@@ -78,8 +75,7 @@ public abstract class Piece {
         }
     }
 
-    
-    /** 
+    /**
      * @param targetSquare
      */
     public void attackSpy(Square targetSquare) {
@@ -89,8 +85,7 @@ public abstract class Piece {
         }
     }
 
-    
-    /** 
+    /**
      * @param targetSquare
      */
     public void attackBomb(Square targetSquare) {
@@ -100,32 +95,29 @@ public abstract class Piece {
         }
     }
 
-    
-    /** 
+    /**
      * @param targetSquare
      */
     public void attackFlag(Square targetSquare) {
         if (targetSquare.getPiece() instanceof Flag) {
-            //targetSquare.getPiece().getOwner().loseGame();
+            // targetSquare.getPiece().getOwner().loseGame();
             targetSquare.getPiece().beCaptured();
             this.getSquare().removePiece();
             targetSquare.placePiece(this);
         }
     }
 
-    
-    /** 
+    /**
      * @param targetPiece
      * @return CombatResult
      */
     public CombatResult resultWhenAttacking(Piece targetPiece) {
-        if(targetPiece instanceof Bomb){
+        if (targetPiece instanceof Bomb) {
             return CombatResult.DRAW;
         }
-        if(targetPiece instanceof Flag){
+        if (targetPiece instanceof Flag) {
             return CombatResult.WIN;
-        }
-        else{
+        } else {
             if (this.getRank() > targetPiece.getRank()) {
                 return CombatResult.WIN;
             } else if (this.getRank() == targetPiece.getRank()) {
@@ -140,32 +132,28 @@ public abstract class Piece {
         this.setSquare(null);
     }
 
-    
-    /** 
+    /**
      * @return Square
      */
     public Square getSquare() {
         return this.square;
     }
 
-    
-    /** 
+    /**
      * @param square
      */
     public void setSquare(Square square) {
         this.square = square;
     }
 
-    
-    /** 
+    /**
      * @return Player
      */
     public Player getOwner() {
         return this.owner;
     }
 
-    
-    /** 
+    /**
      * @return int
      */
     public int getRank() {
@@ -173,6 +161,6 @@ public abstract class Piece {
     }
 
     // public PieceType getType() {
-    //     return this.type;
+    // return this.type;
     // }
 }

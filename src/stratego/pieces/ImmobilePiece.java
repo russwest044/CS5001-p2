@@ -5,14 +5,13 @@ import stratego.Square;
 
 import java.util.ArrayList;
 
-public abstract class ImmobilePiece extends Piece{
-    
-    public ImmobilePiece(Player owner, Square square, int rank){
+public abstract class ImmobilePiece extends Piece {
+
+    public ImmobilePiece(Player owner, Square square, int rank) {
         super(owner, square, 0);
     }
 
-    
-    /** 
+    /**
      * @return ArrayList<Square>
      */
     @Override
@@ -20,8 +19,7 @@ public abstract class ImmobilePiece extends Piece{
         return null;
     }
 
-    
-    /** 
+    /**
      * @return ArrayList<Square>
      */
     @Override

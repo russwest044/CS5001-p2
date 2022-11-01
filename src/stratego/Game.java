@@ -1,42 +1,41 @@
 package stratego;
 
-public class Game{
+public class Game {
     public static int HEIGHT = 10;
     public static int WIDTH = 10;
-    public static int[] WATER_ROWS = {4, 5};
-    public static int[] WATER_COLS = {2, 3, 6, 7};
+    public static int[] WATER_ROWS = { 4, 5 };
+    public static int[] WATER_COLS = { 2, 3, 6, 7 };
 
     private Player p0;
     private Player p1;
 
     private static Square[][] GameBoard;
 
-    public Game(Player p0, Player p1){
+    public Game(Player p0, Player p1) {
         this.p0 = p0;
         this.p1 = p1;
-        for(int i = 0; i < HEIGHT; i++){
-            for(int j = 0; j < WIDTH; j++){
+        for (int i = 0; i < HEIGHT; i++) {
+            for (int j = 0; j < WIDTH; j++) {
                 GameBoard[i][j] = new Square(this, i, j, IsWater(i, j));
             }
         }
     }
 
-    
-    /** 
+    /**
      * @return boolean
      */
     // public boolean setPiece(Player owner, int x, int y, int rank){
-    //     if(GameBoard[x][y].getPiece() != null){
-    //         return false;
-    //     }
-    //     GameBoard[x][y].placePiece(new Piece(owner, GameBoard[x][y], rank));
-    //     return true;
+    // if(GameBoard[x][y].getPiece() != null){
+    // return false;
+    // }
+    // GameBoard[x][y].placePiece(new Piece(owner, GameBoard[x][y], rank));
+    // return true;
     // }
 
-    public boolean IsWater(int x, int y){
-        for(int i = 0; i < WATER_ROWS.length; i++){
-            for(int j = 0; j < WATER_ROWS.length; j++){
-                if(x == i && y == j){
+    public boolean IsWater(int x, int y) {
+        for (int i = 0; i < WATER_ROWS.length; i++) {
+            for (int j = 0; j < WATER_ROWS.length; j++) {
+                if (x == i && y == j) {
                     return true;
                 }
             }
@@ -44,24 +43,22 @@ public class Game{
         return false;
     }
 
-    
-    /** 
+    /**
      * @param playerNumber
      * @return Player
      */
     public Player getPlayer(int playerNumber) {
-        if(this.p0.getPlayerNumber() == playerNumber) {
+        if (this.p0.getPlayerNumber() == playerNumber) {
             return p0;
-        }else{
+        } else {
             return p1;
         }
     }
 
-    
-    /** 
+    /**
      * @return Player
      */
-    public Player getWinner(){
+    public Player getWinner() {
         if (this.p0.hasLost()) {
             return this.p1;
         }
@@ -71,15 +68,14 @@ public class Game{
         return null;
     }
 
-    
-    /** 
+    /**
      * @param row
      * @param col
      * @return Square
      */
     public Square getSquare(int row, int col) {
         try {
-            if(row >= HEIGHT || row < 0 || col >= WIDTH || col < 0){
+            if (row >= HEIGHT || row < 0 || col >= WIDTH || col < 0) {
                 return null;
             }
             return GameBoard[row][col];

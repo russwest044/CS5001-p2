@@ -6,9 +6,9 @@ package stratego;
 
 public enum CombatResult {
     // wim
-    WIN, 
+    WIN,
     // draw
-    DRAW, 
+    DRAW,
     // lose
     LOSE;
 }

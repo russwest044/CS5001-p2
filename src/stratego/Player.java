@@ -5,36 +5,33 @@ public class Player {
     private int playerNumber;
     private boolean lost = false;
 
-    public Player(String name, int playerNumber){
+    public Player(String name, int playerNumber) {
         this.name = name;
         this.playerNumber = playerNumber;
     }
 
-    
-    /** 
+    /**
      * @return String
      */
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    
-    /** 
+    /**
      * @return int
      */
-    public int getPlayerNumber(){
+    public int getPlayerNumber() {
         return playerNumber;
     }
 
-    public void loseGame(){
+    public void loseGame() {
         this.lost = true;
     }
 
-    
-    /** 
+    /**
      * @return boolean
      */
-    public boolean hasLost(){
+    public boolean hasLost() {
         return lost;
     }
 }

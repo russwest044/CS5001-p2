@@ -7,14 +7,14 @@ import stratego.Square;
  * A special kind of chess piece that determines the winner of a match.
  */
 
-public class Flag extends ImmobilePiece{
+public class Flag extends ImmobilePiece {
 
-    public Flag(Player owner, Square square){
+    public Flag(Player owner, Square square) {
         super(owner, square, 0);
     }
 
     @Override
-    public void beCaptured(){
+    public void beCaptured() {
         this.getSquare().removePiece();
         this.getOwner().loseGame();
     }
