@@ -14,6 +14,11 @@ public class Miner extends StepMover{
         // type=PieceType.Miner;
     }
 
+    
+    /** 
+     * @param targetPiece
+     * @return CombatResult
+     */
     @Override
     public CombatResult resultWhenAttacking(Piece targetPiece) {
         // if(targetPiece.getType() == PieceType.Bomb){

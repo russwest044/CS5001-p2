@@ -21,6 +21,10 @@ public class Game{
         }
     }
 
+    
+    /** 
+     * @return boolean
+     */
     // public boolean setPiece(Player owner, int x, int y, int rank){
     //     if(GameBoard[x][y].getPiece() != null){
     //         return false;
@@ -40,6 +44,11 @@ public class Game{
         return false;
     }
 
+    
+    /** 
+     * @param playerNumber
+     * @return Player
+     */
     public Player getPlayer(int playerNumber) {
         if(this.p0.getPlayerNumber() == playerNumber) {
             return p0;
@@ -48,6 +57,10 @@ public class Game{
         }
     }
 
+    
+    /** 
+     * @return Player
+     */
     public Player getWinner(){
         if (this.p0.hasLost()) {
             return this.p1;
@@ -58,6 +71,12 @@ public class Game{
         return null;
     }
 
+    
+    /** 
+     * @param row
+     * @param col
+     * @return Square
+     */
     public Square getSquare(int row, int col) {
         try {
             if(row >= HEIGHT || row < 0 || col >= WIDTH || col < 0){

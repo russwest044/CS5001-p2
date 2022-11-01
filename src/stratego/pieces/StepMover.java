@@ -11,6 +11,10 @@ public class StepMover extends Piece{
         super(owner, square, rank);
     }
 
+    
+    /** 
+     * @return ArrayList<Square>
+     */
     @Override
     public ArrayList<Square> getLegalMoves() {
         ArrayList<Square> moveArea = new ArrayList<>();
@@ -25,6 +29,10 @@ public class StepMover extends Piece{
         return moveArea;
     }
 
+    
+    /** 
+     * @return ArrayList<Square>
+     */
     @Override
     public ArrayList<Square> getLegalAttacks() {
         ArrayList<Square> attackArea = new ArrayList<>();

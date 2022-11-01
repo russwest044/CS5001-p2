@@ -14,6 +14,11 @@ public class Spy extends StepMover{
         // type = PieceType.Spy;
     }
 
+    
+    /** 
+     * @param targetPiece
+     * @return CombatResult
+     */
     @Override
     public CombatResult resultWhenAttacking(Piece targetPiece) {
         // if(targetPiece.getType() == PieceType.Marshal){

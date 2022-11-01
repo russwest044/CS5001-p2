@@ -1,5 +1,14 @@
 package stratego;
 
+/**
+ * Enumerate possible results of pieces combat.
+ */
+
 public enum CombatResult {
-    WIN, DRAW, LOSE;
+    // wim
+    WIN, 
+    // draw
+    DRAW, 
+    // lose
+    LOSE;
 }

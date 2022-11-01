@@ -11,11 +11,19 @@ public abstract class ImmobilePiece extends Piece{
         super(owner, square, 0);
     }
 
+    
+    /** 
+     * @return ArrayList<Square>
+     */
     @Override
     public ArrayList<Square> getLegalMoves() {
         return null;
     }
 
+    
+    /** 
+     * @return ArrayList<Square>
+     */
     @Override
     public ArrayList<Square> getLegalAttacks() {
         return null;

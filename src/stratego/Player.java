@@ -10,10 +10,18 @@ public class Player {
         this.playerNumber = playerNumber;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getName(){
         return name;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getPlayerNumber(){
         return playerNumber;
     }
@@ -22,6 +30,10 @@ public class Player {
         this.lost = true;
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean hasLost(){
         return lost;
     }

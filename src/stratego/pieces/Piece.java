@@ -26,6 +26,10 @@ public abstract class Piece {
 
     public abstract ArrayList<Square> getLegalAttacks();
 
+    
+    /** 
+     * @param toSquare
+     */
     public void move(Square toSquare) {
         if (toSquare.getPiece() == null && toSquare.canBeEntered()) {
             this.getSquare().removePiece();
@@ -36,6 +40,10 @@ public abstract class Piece {
         }
     }
 
+    
+    /** 
+     * @param targetSquare
+     */
     public void attack(Square targetSquare) {
         if (targetSquare.getPiece() == null) {
             throw new IllegalArgumentException();
@@ -47,6 +55,10 @@ public abstract class Piece {
         }
     }
 
+    
+    /** 
+     * @param targetSquare
+     */
     public void attackNormal(Square targetSquare) {
         CombatResult temp = resultWhenAttacking(targetSquare.getPiece());
         if (temp == CombatResult.WIN) {
@@ -61,6 +73,10 @@ public abstract class Piece {
         }
     }
 
+    
+    /** 
+     * @param targetSquare
+     */
     public void attackSpy(Square targetSquare) {
         if (targetSquare.getPiece() instanceof Spy) {
             targetSquare.removePiece();
@@ -68,6 +84,10 @@ public abstract class Piece {
         }
     }
 
+    
+    /** 
+     * @param targetSquare
+     */
     public void attackBomb(Square targetSquare) {
         if (targetSquare.getPiece() instanceof Bomb) {
             targetSquare.removePiece();
@@ -75,6 +95,10 @@ public abstract class Piece {
         }
     }
 
+    
+    /** 
+     * @param targetSquare
+     */
     public void attackFlag(Square targetSquare) {
         if (targetSquare.getPiece() instanceof Flag) {
             //targetSquare.getPiece().getOwner().loseGame();
@@ -84,6 +108,11 @@ public abstract class Piece {
         }
     }
 
+    
+    /** 
+     * @param targetPiece
+     * @return CombatResult
+     */
     public CombatResult resultWhenAttacking(Piece targetPiece) {
         if(targetPiece instanceof Bomb){
             return CombatResult.DRAW;
@@ -105,18 +134,34 @@ public abstract class Piece {
     public void beCaptured() {
     }
 
+    
+    /** 
+     * @return Square
+     */
     public Square getSquare() {
         return this.square;
     }
 
+    
+    /** 
+     * @param square
+     */
     public void setSquare(Square square) {
         this.square = square;
     }
 
+    
+    /** 
+     * @return Player
+     */
     public Player getOwner() {
         return this.owner;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getRank() {
         return this.rank;
     }

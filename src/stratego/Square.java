@@ -2,6 +2,10 @@ package stratego;
 
 import stratego.pieces.Piece;;
 
+/**
+ * Objects, every square on the chessboard.
+ */
+
 public class Square {
     private Game game;
     private int row;
@@ -16,6 +20,10 @@ public class Square {
         this.isWater = isWater;
     }
 
+    
+    /** 
+     * @param piece
+     */
     public void placePiece(Piece piece){
         if (this.piece != null || this.isWater == true) {
             throw new IllegalArgumentException();
@@ -27,22 +35,42 @@ public class Square {
         this.piece = null;
     }
 
+    
+    /** 
+     * @return Game
+     */
     public Game getGame(){
         return this.game;
     }
 
+    
+    /** 
+     * @return Piece
+     */
     public Piece getPiece(){
         return this.piece;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getRow(){
         return row;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getCol(){
         return col;
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean canBeEntered(){
         return !isWater;
     }

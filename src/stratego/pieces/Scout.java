@@ -11,6 +11,10 @@ public class Scout extends Piece{
         super(owner, square, 2);
     }
 
+    
+    /** 
+     * @return ArrayList<Square>
+     */
     @Override
     public ArrayList<Square> getLegalMoves() {
         ArrayList<Square> moveArea = new ArrayList<>();
@@ -52,6 +56,10 @@ public class Scout extends Piece{
         return moveArea;
     }
 
+    
+    /** 
+     * @return ArrayList<Square>
+     */
     @Override
     public ArrayList<Square> getLegalAttacks() {
         ArrayList<Square> attackArea = new ArrayList<>();
