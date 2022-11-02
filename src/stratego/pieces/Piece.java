@@ -73,17 +73,14 @@ public abstract class Piece {
             CombatResult temp = resultWhenAttacking(targetSquare.getPiece());
             if (temp == CombatResult.WIN) {
                 targetSquare.getPiece().beCaptured();
-                targetSquare.removePiece();
                 this.getSquare().removePiece();
                 targetSquare.placePiece(this);
                 this.setSquare(targetSquare);
             }
             if (temp == CombatResult.LOSE) {
-                this.getSquare().removePiece();
                 this.beCaptured();
             }
             if (temp == CombatResult.DRAW){
-                this.getSquare().removePiece();
                 this.beCaptured();
                 targetSquare.getPiece().beCaptured();
                 targetSquare.removePiece();
@@ -177,6 +174,7 @@ public abstract class Piece {
      * Once a piece is destoried, that means it is captured and it should be removed.
      */
     public void beCaptured() {
+        this.getSquare().removePiece();
         this.setSquare(null);
     }
 

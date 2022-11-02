@@ -20,6 +20,8 @@ public class Flag extends ImmobilePiece {
 
     @Override
     public void beCaptured() {
+        this.getSquare().removePiece();
+        this.setSquare(null);
         this.getOwner().loseGame();
     }
 }

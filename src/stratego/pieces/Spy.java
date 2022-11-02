@@ -40,24 +40,24 @@ public class Spy extends StepMover {
         // return CombatResult.WIN;
         // }
         if (targetPiece instanceof StepMover && targetPiece.getRank() == 10) {
-            this.getSquare().removePiece();
-            Square temp = targetPiece.getSquare();
-            targetPiece.beCaptured();
-            temp.placePiece(this);
-            this.setSquare(temp);
+            // this.getSquare().removePiece();
+            // Square temp = targetPiece.getSquare();
+            // targetPiece.beCaptured();
+            // temp.placePiece(this);
+            // this.setSquare(temp);
             return CombatResult.WIN;
         }
         if (targetPiece instanceof Flag) {
             // targetPiece.getOwner().loseGame();
-            targetPiece.beCaptured();
+            // targetPiece.beCaptured();
             return CombatResult.WIN;
         }
-        if (targetPiece instanceof Spy) {
-            targetPiece.beCaptured();
-            this.beCaptured();
+        if (targetPiece instanceof Spy || targetPiece instanceof Bomb) {
+            // targetPiece.beCaptured();
+            // this.beCaptured();
             return CombatResult.DRAW;
         }
-        this.getSquare().removePiece();
+        // this.getSquare().removePiece();
         return CombatResult.LOSE;
     }
 }
