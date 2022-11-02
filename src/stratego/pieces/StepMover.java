@@ -30,16 +30,16 @@ public class StepMover extends Piece {
         int x = this.getSquare().getRow();
         int y = this.getSquare().getCol();
 
-        if (this.getSquare().getGame().getSquare(x - 1, y).getPiece() == null){
+        if (this.getSquare().getGame().getSquare(x - 1, y).getPiece() == null) {
             moveArea.add(this.getSquare().getGame().getSquare(x - 1, y));
         }
-        if (this.getSquare().getGame().getSquare(x + 1, y).getPiece() == null){
+        if (this.getSquare().getGame().getSquare(x + 1, y).getPiece() == null) {
             moveArea.add(this.getSquare().getGame().getSquare(x + 1, y));
         }
-        if (this.getSquare().getGame().getSquare(x, y - 1).getPiece() == null){
+        if (this.getSquare().getGame().getSquare(x, y - 1).getPiece() == null) {
             moveArea.add(this.getSquare().getGame().getSquare(x, y - 1));
         }
-        if (this.getSquare().getGame().getSquare(x, y + 1).getPiece() == null){
+        if (this.getSquare().getGame().getSquare(x, y + 1).getPiece() == null) {
             moveArea.add(this.getSquare().getGame().getSquare(x, y + 1));
         }
         // moveArea.add(this.getSquare().getGame().getSquare(x - 1, y));

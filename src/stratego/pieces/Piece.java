@@ -80,7 +80,7 @@ public abstract class Piece {
             if (temp == CombatResult.LOSE) {
                 this.beCaptured();
             }
-            if (temp == CombatResult.DRAW){
+            if (temp == CombatResult.DRAW) {
                 this.beCaptured();
                 targetSquare.getPiece().beCaptured();
                 targetSquare.removePiece();
