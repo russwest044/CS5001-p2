@@ -66,66 +66,89 @@ public abstract class Piece {
         if (targetSquare.getPiece() == null || this instanceof Bomb || this instanceof Flag) {
             throw new IllegalArgumentException();
         } else {
-            attackSpy(targetSquare);
-            attackBomb(targetSquare);
-            attackFlag(targetSquare);
-            attackNormal(targetSquare);
+            // attackSpy(targetSquare);
+            // attackBomb(targetSquare);
+            // attackFlag(targetSquare);
+            // attackNormal(targetSquare);
+            CombatResult temp = resultWhenAttacking(targetSquare.getPiece());
+            if (temp == CombatResult.WIN) {
+                targetSquare.getPiece().beCaptured();
+                targetSquare.removePiece();
+                this.getSquare().removePiece();
+                targetSquare.placePiece(this);
+                this.setSquare(targetSquare);
+            }
+            if (temp == CombatResult.LOSE) {
+                this.getSquare().removePiece();
+                this.beCaptured();
+            }
+            if (temp == CombatResult.DRAW){
+                this.getSquare().removePiece();
+                this.beCaptured();
+                targetSquare.getPiece().beCaptured();
+                targetSquare.removePiece();
+            }
         }
     }
 
-    /**
-     * Attack normal StepMover pieces.
-     * @param targetSquare the square where the target piece stands
-     */
-    public void attackNormal(Square targetSquare) {
-        CombatResult temp = resultWhenAttacking(targetSquare.getPiece());
-        if (temp == CombatResult.WIN) {
-            targetSquare.getPiece().beCaptured();
-            this.getSquare().removePiece();
-            targetSquare.placePiece(this);
-            this.setSquare(targetSquare);
-        } else if (temp == CombatResult.LOSE) {
-            this.beCaptured();
-        } else {
-            this.beCaptured();
-            targetSquare.getPiece().beCaptured();
-        }
-    }
+    // /**
+    //  * Attack normal StepMover pieces.
+    //  * @param targetSquare the square where the target piece stands
+    //  */
+    // public void attackNormal(Square targetSquare) {
+    //     CombatResult temp = resultWhenAttacking(targetSquare.getPiece());
+    //     if (temp == CombatResult.WIN) {
+    //         targetSquare.getPiece().beCaptured();
+    //         targetSquare.removePiece();
+    //         this.getSquare().removePiece();
+    //         targetSquare.placePiece(this);
+    //         this.setSquare(targetSquare);
+    //     } else if (temp == CombatResult.LOSE) {
+    //         this.getSquare().removePiece();
+    //         this.beCaptured();
+    //     } else {
+    //         this.getSquare().removePiece();
+    //         this.beCaptured();
+    //         targetSquare.getPiece().beCaptured();
+    //         targetSquare.removePiece();
+    //     }
+    // }
 
-    /**
-     * Attack normal Spy pieces.
-     * @param targetSquare the square where the target piece stands
-     */
-    public void attackSpy(Square targetSquare) {
-        if (targetSquare.getPiece() instanceof Spy) {
-            targetSquare.getPiece().beCaptured();
-            this.move(targetSquare);
-        }
-    }
+    // /**
+    //  * Attack normal Spy pieces.
+    //  * @param targetSquare the square where the target piece stands
+    //  */
+    // public void attackSpy(Square targetSquare) {
+    //     if (targetSquare.getPiece() instanceof Spy) {
+    //         targetSquare.getPiece().beCaptured();
+    //         targetSquare.removePiece();
+    //         this.move(targetSquare);
+    //     }
+    // }
 
-    /**
-     * Attack normal Bomb pieces.
-     * @param targetSquare the square where the target piece stands
-     */
-    public void attackBomb(Square targetSquare) {
-        if (targetSquare.getPiece() instanceof Bomb) {
-            targetSquare.getPiece().beCaptured();
-            this.beCaptured();
-        }
-    }
+    // /**
+    //  * Attack normal Bomb pieces.
+    //  * @param targetSquare the square where the target piece stands
+    //  */
+    // public void attackBomb(Square targetSquare) {
+    //     if (targetSquare.getPiece() instanceof Bomb) {
+    //         targetSquare.getPiece().beCaptured();
+    //         this.beCaptured();
+    //     }
+    // }
 
-    /**
-     * Attack normal Flag pieces.
-     * @param targetSquare the square where the target piece stands
-     */
-    public void attackFlag(Square targetSquare) {
-        if (targetSquare.getPiece() instanceof Flag) {
-            // targetSquare.getPiece().getOwner().loseGame();
-            targetSquare.getPiece().beCaptured();
-            this.getSquare().removePiece();
-            targetSquare.placePiece(this);
-        }
-    }
+    // /**
+    //  * Attack normal Flag pieces.
+    //  * @param targetSquare the square where the target piece stands
+    //  */
+    // public void attackFlag(Square targetSquare) {
+    //     if (targetSquare.getPiece() instanceof Flag) {
+    //         // targetSquare.getPiece().getOwner().loseGame();
+    //         targetSquare.getPiece().beCaptured();
+    //         this.getSquare().removePiece();
+    //         targetSquare.placePiece(this);
+    //     }
+    // }
 
     /**
      * The function to get the result of combat.
@@ -137,6 +160,7 @@ public abstract class Piece {
             return CombatResult.DRAW;
         }
         if (targetPiece instanceof Flag) {
+            targetPiece.beCaptured();
             return CombatResult.WIN;
         } else {
             if (this.getRank() > targetPiece.getRank()) {
@@ -153,7 +177,6 @@ public abstract class Piece {
      * Once a piece is destoried, that means it is captured and it should be removed.
      */
     public void beCaptured() {
-        this.getSquare().removePiece();
         this.setSquare(null);
     }
 

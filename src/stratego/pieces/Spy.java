@@ -44,6 +44,7 @@ public class Spy extends StepMover {
             Square temp = targetPiece.getSquare();
             targetPiece.beCaptured();
             temp.placePiece(this);
+            this.setSquare(temp);
             return CombatResult.WIN;
         }
         if (targetPiece instanceof Flag) {
