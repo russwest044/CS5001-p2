@@ -41,8 +41,9 @@ public class Spy extends StepMover {
         // }
         if (targetPiece instanceof StepMover && targetPiece.getRank() == 10) {
             this.getSquare().removePiece();
+            Square temp = targetPiece.getSquare();
             targetPiece.beCaptured();
-            targetPiece.getSquare().placePiece(this);
+            temp.placePiece(this);
             return CombatResult.WIN;
         }
         if (targetPiece instanceof Flag) {

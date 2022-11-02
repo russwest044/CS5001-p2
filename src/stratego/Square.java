@@ -37,7 +37,6 @@ public class Square {
         }
         piece.setSquare(this);
         this.piece = piece;
-
     }
 
     /**

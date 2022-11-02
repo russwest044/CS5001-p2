@@ -63,7 +63,7 @@ public abstract class Piece {
      * @param targetSquare the square where the target piece stands
      */
     public void attack(Square targetSquare) {
-        if (targetSquare.getPiece() == null) {
+        if (targetSquare.getPiece() == null || this instanceof Bomb || this instanceof Flag) {
             throw new IllegalArgumentException();
         } else {
             attackSpy(targetSquare);
