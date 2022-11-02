@@ -37,8 +37,9 @@ public class Miner extends StepMover {
         // }
         if (targetPiece instanceof Bomb) {
             this.getSquare().removePiece();
-            targetPiece.getSquare().removePiece();
-            targetPiece.getSquare().placePiece(this);
+            Square temp = targetPiece.getSquare();
+            targetPiece.beCaptured();
+            temp.placePiece(this);
             return CombatResult.WIN;
         }
         return super.resultWhenAttacking(targetPiece);

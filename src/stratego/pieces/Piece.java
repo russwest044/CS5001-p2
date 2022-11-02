@@ -183,7 +183,7 @@ public abstract class Piece {
      * @return Square
      */
     public Square getSquare() {
-        return this.square;
+        return square;
     }
 
     /**
@@ -199,7 +199,7 @@ public abstract class Piece {
      * @return Player
      */
     public Player getOwner() {
-        return this.owner;
+        return owner;
     }
 
     /**
@@ -207,7 +207,7 @@ public abstract class Piece {
      * @return int
      */
     public int getRank() {
-        return this.rank;
+        return rank;
     }
 
     // public PieceType getType() {
