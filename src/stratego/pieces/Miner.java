@@ -24,8 +24,8 @@ public class Miner extends StepMover {
     }
 
     /**
-     * @param targetPiece
-     * @return CombatResult
+     * @param targetPiece the piece that being attacked
+     * @return CombatResult wim, lose or draw
      */
     @Override
     public CombatResult resultWhenAttacking(Piece targetPiece) {

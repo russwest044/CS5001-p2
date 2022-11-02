@@ -38,7 +38,7 @@ public abstract class Piece {
 
     /**
      * The function for pieces to make a move.
-     * @param toSquare
+     * @param toSquare the target square to be placed
      */
     public void move(Square toSquare) {
         if (toSquare.getPiece() == null && toSquare.canBeEntered()) {
@@ -52,7 +52,7 @@ public abstract class Piece {
 
     /**
      * The function for pieces to make a attack.
-     * @param targetSquare
+     * @param targetSquare the square where the target piece stands
      */
     public void attack(Square targetSquare) {
         if (targetSquare.getPiece() == null) {
@@ -67,7 +67,7 @@ public abstract class Piece {
 
     /**
      * Attack normal StepMover pieces.
-     * @param targetSquare
+     * @param targetSquare the square where the target piece stands
      */
     public void attackNormal(Square targetSquare) {
         CombatResult temp = resultWhenAttacking(targetSquare.getPiece());
@@ -90,7 +90,7 @@ public abstract class Piece {
 
     /**
      * Attack normal Spy pieces.
-     * @param targetSquare
+     * @param targetSquare the square where the target piece stands
      */
     public void attackSpy(Square targetSquare) {
         if (targetSquare.getPiece() instanceof Spy) {
@@ -102,7 +102,7 @@ public abstract class Piece {
 
     /**
      * Attack normal Bomb pieces.
-     * @param targetSquare
+     * @param targetSquare the square where the target piece stands
      */
     public void attackBomb(Square targetSquare) {
         if (targetSquare.getPiece() instanceof Bomb) {
@@ -115,7 +115,7 @@ public abstract class Piece {
 
     /**
      * Attack normal Flag pieces.
-     * @param targetSquare
+     * @param targetSquare the square where the target piece stands
      */
     public void attackFlag(Square targetSquare) {
         if (targetSquare.getPiece() instanceof Flag) {
@@ -128,7 +128,7 @@ public abstract class Piece {
 
     /**
      * The function to get the result of combat.
-     * @param targetPiece
+     * @param targetPiece the target piece to be attacked
      * @return CombatResult
      */
     public CombatResult resultWhenAttacking(Piece targetPiece) {
@@ -166,7 +166,7 @@ public abstract class Piece {
 
     /**
      * The function to assign a square to the piece.
-     * @param square
+     * @param square change the square state of current piece
      */
     public void setSquare(Square square) {
         this.square = square;

@@ -55,7 +55,7 @@ public class Game {
 
     /**
      * The function to get current player.
-     * @param playerNumber
+     * @param playerNumber return player according to the playernumber
      * @return Player
      */
     public Player getPlayer(int playerNumber) {
@@ -82,8 +82,8 @@ public class Game {
 
     /**
      * The function to get the location of a square unit.
-     * @param row
-     * @param col
+     * @param row row number of a square
+     * @param col column number of a square
      * @return Square
      */
     public Square getSquare(int row, int col) {

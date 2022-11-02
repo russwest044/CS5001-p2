@@ -22,7 +22,7 @@ public abstract class ImmobilePiece extends Piece {
     }
 
     /**
-     * @return ArrayList<Square>
+     * @return ArrayList<Square> for ImmobliePiece, there is no legal move
      */
     @Override
     public ArrayList<Square> getLegalMoves() {
@@ -30,7 +30,7 @@ public abstract class ImmobilePiece extends Piece {
     }
 
     /**
-     * @return ArrayList<Square>
+     * @return ArrayList<Square> for ImmobliePiece, cannot attack
      */
     @Override
     public ArrayList<Square> getLegalAttacks() {

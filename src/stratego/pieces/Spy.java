@@ -23,7 +23,7 @@ public class Spy extends StepMover {
     }
 
     /**
-     * @param targetPiece
+     * @param targetPiece the target piece
      * @return CombatResult
      */
     @Override
