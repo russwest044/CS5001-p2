@@ -27,7 +27,7 @@ public abstract class ImmobilePiece extends Piece {
      */
     @Override
     public ArrayList<Square> getLegalMoves() {
-        return null;
+        return new ArrayList<>();
     }
 
     /**
@@ -36,6 +36,6 @@ public abstract class ImmobilePiece extends Piece {
      */
     @Override
     public ArrayList<Square> getLegalAttacks() {
-        return null;
+        return new ArrayList<>();
     }
 }

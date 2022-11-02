@@ -23,7 +23,7 @@ public class Miner extends StepMover {
     }
 
     /**
-     * The function to get special results of the miner combat. 
+     * The function to get special results of the miner combat.
      * @param targetPiece the piece that being attacked
      * @return CombatResult
      */
