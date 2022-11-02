@@ -11,7 +11,7 @@ import stratego.Square;
 public class StepMover extends Piece {
 
     /**
-     * Constructor of StepMover
+     * Constructor of StepMover.
      * @param owner the Player of the piece
      * @param square the square where the piece stands
      * @param rank rank of the piece

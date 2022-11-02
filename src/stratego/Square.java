@@ -32,7 +32,7 @@ public class Square {
      * @param piece the piece that will be put on
      */
     public void placePiece(Piece piece) {
-        if (this.piece != null || this.canBeEntered()) {
+        if (this.piece != null || !this.canBeEntered()) {
             throw new IllegalArgumentException();
         }
         this.piece = piece;

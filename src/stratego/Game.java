@@ -15,11 +15,11 @@ public class Game {
     /**
      * Row number of the water area on the chessboard.
      */
-    public static int[] WATER_ROWS = { 4, 5 };
+    public static int[] WATER_ROWS = {4, 5};
     /**
      * Column number of the water area on the chessboard.
      */
-    public static int[] WATER_COLS = { 2, 3, 6, 7 };
+    public static int[] WATER_COLS = {2, 3, 6, 7};
 
     private Player p0;
     private Player p1;

@@ -34,11 +34,13 @@ public abstract class Piece {
 
     /**
      * The function to return legalmove squares, need to be overrided.
+     * @return ArrayList<Square>
      */
     public abstract ArrayList<Square> getLegalMoves();
 
     /**
      * The function to return legalattack squares, need to be overrided.
+     * @return ArrayList<Square>
      */
     public abstract ArrayList<Square> getLegalAttacks();
 

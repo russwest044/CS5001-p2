@@ -23,6 +23,7 @@ public class Spy extends StepMover {
     }
 
     /**
+     * The function to get special results of the spy combat. 
      * @param targetPiece the target piece
      * @return CombatResult
      */
