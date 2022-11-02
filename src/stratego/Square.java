@@ -35,7 +35,9 @@ public class Square {
         if (this.piece != null || !this.canBeEntered()) {
             throw new IllegalArgumentException();
         }
+        piece.setSquare(this);
         this.piece = piece;
+
     }
 
     /**

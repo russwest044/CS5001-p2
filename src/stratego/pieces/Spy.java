@@ -41,7 +41,6 @@ public class Spy extends StepMover {
         // }
         if (targetPiece instanceof StepMover && targetPiece.getRank() == 10) {
             this.getSquare().removePiece();
-            targetPiece.getSquare().removePiece();
             targetPiece.beCaptured();
             targetPiece.getSquare().placePiece(this);
             return CombatResult.WIN;
@@ -51,10 +50,8 @@ public class Spy extends StepMover {
             targetPiece.beCaptured();
             return CombatResult.WIN;
         }
-        if (targetPiece instanceof Spy){
-            targetPiece.getSquare().removePiece();
+        if (targetPiece instanceof Spy) {
             targetPiece.beCaptured();
-            this.getSquare().removePiece();
             this.beCaptured();
             return CombatResult.DRAW;
         }

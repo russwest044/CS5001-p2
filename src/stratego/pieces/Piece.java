@@ -82,16 +82,12 @@ public abstract class Piece {
         if (temp == CombatResult.WIN) {
             targetSquare.getPiece().beCaptured();
             this.getSquare().removePiece();
-            targetSquare.removePiece();
             targetSquare.placePiece(this);
             this.setSquare(targetSquare);
         } else if (temp == CombatResult.LOSE) {
-            this.getSquare().removePiece();
             this.beCaptured();
         } else {
-            this.getSquare().removePiece();
             this.beCaptured();
-            targetSquare.removePiece();
             targetSquare.getPiece().beCaptured();
         }
     }
@@ -103,7 +99,6 @@ public abstract class Piece {
     public void attackSpy(Square targetSquare) {
         if (targetSquare.getPiece() instanceof Spy) {
             targetSquare.getPiece().beCaptured();
-            targetSquare.removePiece();
             this.move(targetSquare);
         }
     }
@@ -115,8 +110,6 @@ public abstract class Piece {
     public void attackBomb(Square targetSquare) {
         if (targetSquare.getPiece() instanceof Bomb) {
             targetSquare.getPiece().beCaptured();
-            targetSquare.removePiece();
-            this.getSquare().removePiece();
             this.beCaptured();
         }
     }
