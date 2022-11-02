@@ -50,7 +50,7 @@ public class Square {
      * @return Game
      */
     public Game getGame() {
-        return this.game;
+        return game;
     }
 
     /**
@@ -58,7 +58,7 @@ public class Square {
      * @return Piece
      */
     public Piece getPiece() {
-        return this.piece;
+        return piece;
     }
 
     /**

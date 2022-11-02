@@ -11,7 +11,7 @@ public class Player {
     /**
      * Constructor of Player.
      * 
-     * @param name the name of Player
+     * @param name         the name of Player
      * @param playerNumber the number of Player
      * 
      */
@@ -22,32 +22,35 @@ public class Player {
 
     /**
      * The function to get Player's name.
+     * 
      * @return String
      */
     public String getName() {
-        return this.name;
+        return name;
     }
 
     /**
      * The function to get player's number.
+     * 
      * @return int
      */
     public int getPlayerNumber() {
-        return this.playerNumber;
+        return playerNumber;
     }
 
     /**
      * The function to give a result of the game.
      */
     public void loseGame() {
-        this.lost = true;
+        lost = true;
     }
 
     /**
      * The function to judge whether a player loses the game.
+     * 
      * @return boolean
      */
     public boolean hasLost() {
-        return this.lost;
+        return lost;
     }
 }

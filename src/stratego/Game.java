@@ -15,11 +15,11 @@ public class Game {
     /**
      * Row number of the water area on the chessboard.
      */
-    public static int[] WATER_ROWS = {4, 5};
+    public static int[] WATER_ROWS = { 4, 5 };
     /**
      * Column number of the water area on the chessboard.
      */
-    public static int[] WATER_COLS = {2, 3, 6, 7};
+    public static int[] WATER_COLS = { 2, 3, 6, 7 };
 
     private Player p0;
     private Player p1;
@@ -60,7 +60,7 @@ public class Game {
     public boolean isInWater(int x, int y) {
         for (int i = 0; i < WATER_ROWS.length; i++) {
             for (int j = 0; j < WATER_COLS.length; j++) {
-                if (x == i && y == j) {
+                if (x == WATER_ROWS[i] && y == WATER_COLS[j]) {
                     return true;
                 }
             }
@@ -77,8 +77,10 @@ public class Game {
     public Player getPlayer(int playerNumber) {
         if (this.p0.getPlayerNumber() == playerNumber) {
             return p0;
-        } else {
+        } else if (this.p1.getPlayerNumber() == playerNumber) {
             return p1;
+        } else {
+            throw new IllegalArgumentException();
         }
     }
 
@@ -105,13 +107,9 @@ public class Game {
      * @return Square
      */
     public Square getSquare(int row, int col) {
-        try {
-            if (row >= HEIGHT || row < 0 || col >= WIDTH || col < 0) {
-                return null;
-            }
-            return gameBoard[row][col];
-        } catch (Exception e) {
-            throw new IllegalArgumentException();
+        if (row >= HEIGHT || row < 0 || col >= WIDTH || col < 0) {
+            throw new IndexOutOfBoundsException();
         }
+        return gameBoard[row][col];
     }
 }
