@@ -12,9 +12,10 @@ public class StepMover extends Piece {
 
     /**
      * Constructor of StepMover.
-     * @param owner the Player of the piece
+     * 
+     * @param owner  the Player of the piece
      * @param square the square where the piece stands
-     * @param rank rank of the piece
+     * @param rank   rank of the piece
      */
     public StepMover(Player owner, Square square, int rank) {
         super(owner, square, rank);
@@ -22,6 +23,7 @@ public class StepMover extends Piece {
 
     /**
      * The function to return legalmove squares.
+     * 
      * @return ArrayList<Square>
      */
     @Override
@@ -30,16 +32,20 @@ public class StepMover extends Piece {
         int x = this.getSquare().getRow();
         int y = this.getSquare().getCol();
 
-        if (this.getSquare().getGame().getSquare(x - 1, y).getPiece() == null) {
+        if (this.getSquare().getGame().getSquare(x - 1, y) != null
+                && this.getSquare().getGame().getSquare(x - 1, y).getPiece() == null) {
             moveArea.add(this.getSquare().getGame().getSquare(x - 1, y));
         }
-        if (this.getSquare().getGame().getSquare(x + 1, y).getPiece() == null) {
+        if (this.getSquare().getGame().getSquare(x + 1, y) != null
+                && this.getSquare().getGame().getSquare(x + 1, y).getPiece() == null) {
             moveArea.add(this.getSquare().getGame().getSquare(x + 1, y));
         }
-        if (this.getSquare().getGame().getSquare(x, y - 1).getPiece() == null) {
+        if (this.getSquare().getGame().getSquare(x, y - 1) != null
+                && this.getSquare().getGame().getSquare(x, y - 1).getPiece() == null) {
             moveArea.add(this.getSquare().getGame().getSquare(x, y - 1));
         }
-        if (this.getSquare().getGame().getSquare(x, y + 1).getPiece() == null) {
+        if (this.getSquare().getGame().getSquare(x, y + 1) != null
+                && this.getSquare().getGame().getSquare(x, y + 1).getPiece() == null) {
             moveArea.add(this.getSquare().getGame().getSquare(x, y + 1));
         }
         // moveArea.add(this.getSquare().getGame().getSquare(x - 1, y));
@@ -52,6 +58,7 @@ public class StepMover extends Piece {
 
     /**
      * The function to return legalattack squares.
+     * 
      * @return ArrayList<Square>
      */
     @Override

@@ -108,7 +108,7 @@ public class Game {
      */
     public Square getSquare(int row, int col) {
         if (row >= HEIGHT || row < 0 || col >= WIDTH || col < 0) {
-            throw new IndexOutOfBoundsException();
+            return null;
         }
         return gameBoard[row][col];
     }
