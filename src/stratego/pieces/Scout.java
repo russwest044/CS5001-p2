@@ -26,40 +26,40 @@ public class Scout extends Piece {
     @Override
     public ArrayList<Square> getLegalMoves() {
         ArrayList<Square> moveArea = new ArrayList<>();
-        int x = super.getSquare().getRow();
-        int y = super.getSquare().getCol();
+        int x = this.getSquare().getRow();
+        int y = this.getSquare().getCol();
 
-        while (super.getSquare().getGame().getSquare(x + 1, y) != null
-        && super.getSquare().getGame().getSquare(x + 1, y).canBeEntered()
-        && super.getSquare().getGame().getSquare(x + 1, y).getPiece() == null) {
-            moveArea.add(super.getSquare().getGame().getSquare(x + 1, y));
+        while (this.getSquare().getGame().getSquare(x + 1, y) != null
+        && this.getSquare().getGame().getSquare(x + 1, y).canBeEntered()
+        && this.getSquare().getGame().getSquare(x + 1, y).getPiece() == null) {
+            moveArea.add(this.getSquare().getGame().getSquare(x + 1, y));
             x++;
         }
-        x = super.getSquare().getRow();
+        x = this.getSquare().getRow();
 
-        while (super.getSquare().getGame().getSquare(x - 1, y) != null
-        && super.getSquare().getGame().getSquare(x - 1, y).canBeEntered()
-        && super.getSquare().getGame().getSquare(x - 1, y).getPiece() == null) {
-            moveArea.add(super.getSquare().getGame().getSquare(x - 1, y));
+        while (this.getSquare().getGame().getSquare(x - 1, y) != null
+        && this.getSquare().getGame().getSquare(x - 1, y).canBeEntered()
+        && this.getSquare().getGame().getSquare(x - 1, y).getPiece() == null) {
+            moveArea.add(this.getSquare().getGame().getSquare(x - 1, y));
             x--;
         }
-        x = super.getSquare().getRow();
+        x = this.getSquare().getRow();
 
-        while (super.getSquare().getGame().getSquare(x, y + 1) != null
-        && super.getSquare().getGame().getSquare(x, y + 1).canBeEntered()
-        && super.getSquare().getGame().getSquare(x, y + 1).getPiece() == null) {
-            moveArea.add(super.getSquare().getGame().getSquare(x, y + 1));
+        while (this.getSquare().getGame().getSquare(x, y + 1) != null
+        && this.getSquare().getGame().getSquare(x, y + 1).canBeEntered()
+        && this.getSquare().getGame().getSquare(x, y + 1).getPiece() == null) {
+            moveArea.add(this.getSquare().getGame().getSquare(x, y + 1));
             y++;
         }
-        y = super.getSquare().getCol();
+        y = this.getSquare().getCol();
 
-        while (super.getSquare().getGame().getSquare(x, y - 1) != null
-        && super.getSquare().getGame().getSquare(x, y - 1).canBeEntered()
-        && super.getSquare().getGame().getSquare(x, y - 1).getPiece() == null) {
-            moveArea.add(super.getSquare().getGame().getSquare(x, y - 1));
+        while (this.getSquare().getGame().getSquare(x, y - 1) != null
+        && this.getSquare().getGame().getSquare(x, y - 1).canBeEntered()
+        && this.getSquare().getGame().getSquare(x, y - 1).getPiece() == null) {
+            moveArea.add(this.getSquare().getGame().getSquare(x, y - 1));
             y--;
         }
-        y = super.getSquare().getCol();
+        y = this.getSquare().getCol();
 
         return moveArea;
     }
@@ -71,20 +71,20 @@ public class Scout extends Piece {
     @Override
     public ArrayList<Square> getLegalAttacks() {
         ArrayList<Square> attackArea = new ArrayList<>();
-        int x = super.getSquare().getRow();
-        int y = super.getSquare().getCol();
+        int x = this.getSquare().getRow();
+        int y = this.getSquare().getCol();
 
-        if (super.getSquare().getGame().getSquare(x - 1, y).getPiece() != null) {
-            attackArea.add(super.getSquare().getGame().getSquare(x - 1, y));
+        if (this.getSquare().getGame().getSquare(x - 1, y).getPiece() != null) {
+            attackArea.add(this.getSquare().getGame().getSquare(x - 1, y));
         }
-        if (super.getSquare().getGame().getSquare(x + 1, y).getPiece() != null) {
-            attackArea.add(super.getSquare().getGame().getSquare(x + 1, y));
+        if (this.getSquare().getGame().getSquare(x + 1, y).getPiece() != null) {
+            attackArea.add(this.getSquare().getGame().getSquare(x + 1, y));
         }
-        if (super.getSquare().getGame().getSquare(x, y - 1).getPiece() != null) {
-            attackArea.add(super.getSquare().getGame().getSquare(x, y - 1));
+        if (this.getSquare().getGame().getSquare(x, y - 1).getPiece() != null) {
+            attackArea.add(this.getSquare().getGame().getSquare(x, y - 1));
         }
-        if (super.getSquare().getGame().getSquare(x, y + 1).getPiece() != null) {
-            attackArea.add(super.getSquare().getGame().getSquare(x, y + 1));
+        if (this.getSquare().getGame().getSquare(x, y + 1).getPiece() != null) {
+            attackArea.add(this.getSquare().getGame().getSquare(x, y + 1));
         }
 
         return attackArea;

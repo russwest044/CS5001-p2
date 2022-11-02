@@ -140,12 +140,19 @@ public abstract class Piece {
      * @return CombatResult
      */
     public CombatResult resultWhenAttacking(Piece targetPiece) {
-        if (this.getRank() > targetPiece.getRank()) {
-            return CombatResult.WIN;
-        } else if (this.getRank() == targetPiece.getRank()) {
+        if (targetPiece instanceof Bomb) {
             return CombatResult.DRAW;
+        }
+        if (targetPiece instanceof Flag) {
+            return CombatResult.WIN;
         } else {
-            return CombatResult.LOSE;
+            if (this.getRank() > targetPiece.getRank()) {
+                return CombatResult.WIN;
+            } else if (this.getRank() == targetPiece.getRank()) {
+                return CombatResult.DRAW;
+            } else {
+                return CombatResult.LOSE;
+            }
         }
     }
 

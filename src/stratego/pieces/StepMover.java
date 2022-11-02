@@ -27,13 +27,13 @@ public class StepMover extends Piece {
     @Override
     public ArrayList<Square> getLegalMoves() {
         ArrayList<Square> moveArea = new ArrayList<>();
-        int x = super.getSquare().getRow();
-        int y = super.getSquare().getCol();
+        int x = this.getSquare().getRow();
+        int y = this.getSquare().getCol();
 
-        moveArea.add(super.getSquare().getGame().getSquare(x - 1, y));
-        moveArea.add(super.getSquare().getGame().getSquare(x + 1, y));
-        moveArea.add(super.getSquare().getGame().getSquare(x, y - 1));
-        moveArea.add(super.getSquare().getGame().getSquare(x, y + 1));
+        moveArea.add(this.getSquare().getGame().getSquare(x - 1, y));
+        moveArea.add(this.getSquare().getGame().getSquare(x + 1, y));
+        moveArea.add(this.getSquare().getGame().getSquare(x, y - 1));
+        moveArea.add(this.getSquare().getGame().getSquare(x, y + 1));
 
         return moveArea;
     }
@@ -45,20 +45,20 @@ public class StepMover extends Piece {
     @Override
     public ArrayList<Square> getLegalAttacks() {
         ArrayList<Square> attackArea = new ArrayList<>();
-        int x = super.getSquare().getRow();
-        int y = super.getSquare().getCol();
+        int x = this.getSquare().getRow();
+        int y = this.getSquare().getCol();
 
-        if (super.getSquare().getGame().getSquare(x - 1, y).getPiece() != null) {
-            attackArea.add(super.getSquare().getGame().getSquare(x - 1, y));
+        if (this.getSquare().getGame().getSquare(x - 1, y).getPiece() != null) {
+            attackArea.add(this.getSquare().getGame().getSquare(x - 1, y));
         }
-        if (super.getSquare().getGame().getSquare(x + 1, y).getPiece() != null) {
-            attackArea.add(super.getSquare().getGame().getSquare(x + 1, y));
+        if (this.getSquare().getGame().getSquare(x + 1, y).getPiece() != null) {
+            attackArea.add(this.getSquare().getGame().getSquare(x + 1, y));
         }
-        if (super.getSquare().getGame().getSquare(x, y - 1).getPiece() != null) {
-            attackArea.add(super.getSquare().getGame().getSquare(x, y - 1));
+        if (this.getSquare().getGame().getSquare(x, y - 1).getPiece() != null) {
+            attackArea.add(this.getSquare().getGame().getSquare(x, y - 1));
         }
-        if (super.getSquare().getGame().getSquare(x, y + 1).getPiece() != null) {
-            attackArea.add(super.getSquare().getGame().getSquare(x, y + 1));
+        if (this.getSquare().getGame().getSquare(x, y + 1).getPiece() != null) {
+            attackArea.add(this.getSquare().getGame().getSquare(x, y + 1));
         }
 
         return attackArea;
