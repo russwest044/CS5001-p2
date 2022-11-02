@@ -14,7 +14,6 @@ public class Miner extends StepMover {
 
     /**
      * Constructor of StepMover.
-     * 
      * @param owner Player of the miner piece
      * @param square the square where the piece stands
      */
@@ -25,7 +24,7 @@ public class Miner extends StepMover {
 
     /**
      * @param targetPiece the piece that being attacked
-     * @return CombatResult wim, lose or draw
+     * @return CombatResult
      */
     @Override
     public CombatResult resultWhenAttacking(Piece targetPiece) {

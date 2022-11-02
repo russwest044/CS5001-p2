@@ -21,6 +21,7 @@ public class StepMover extends Piece {
     }
 
     /**
+     * The function to return legalmove squares.
      * @return ArrayList<Square>
      */
     @Override
@@ -38,6 +39,7 @@ public class StepMover extends Piece {
     }
 
     /**
+     * The function to return legalattack squares.
      * @return ArrayList<Square>
      */
     @Override

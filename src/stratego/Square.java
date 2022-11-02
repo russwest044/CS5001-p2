@@ -62,7 +62,7 @@ public class Square {
     }
 
     /**
-     * The function to get current row number
+     * The function to get current row number.
      * @return int
      */
     public int getRow() {

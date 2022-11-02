@@ -11,7 +11,7 @@ import stratego.Square;
 public class Scout extends Piece {
 
     /**
-     * Constructor of Scout
+     * Constructor of Scout.
      * @param owner the Player of the piece
      * @param square the square where the piece stands
      */
@@ -20,6 +20,7 @@ public class Scout extends Piece {
     }
 
     /**
+     * The function to return legalmove squares.
      * @return ArrayList<Square>
      */
     @Override
@@ -64,6 +65,7 @@ public class Scout extends Piece {
     }
 
     /**
+     * The function to return legalattack squares.
      * @return ArrayList<Square>
      */
     @Override

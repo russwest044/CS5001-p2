@@ -32,8 +32,14 @@ public abstract class Piece {
         this.square = square;
     }
 
+    /**
+     * The function to return legalmove squares, need to be overrided.
+     */
     public abstract ArrayList<Square> getLegalMoves();
 
+    /**
+     * The function to return legalattack squares, need to be overrided.
+     */
     public abstract ArrayList<Square> getLegalAttacks();
 
     /**

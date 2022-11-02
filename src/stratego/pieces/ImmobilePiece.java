@@ -22,6 +22,7 @@ public abstract class ImmobilePiece extends Piece {
     }
 
     /**
+     * The function to return legalmove squares.
      * @return ArrayList<Square> for ImmobliePiece, there is no legal move
      */
     @Override
@@ -30,6 +31,7 @@ public abstract class ImmobilePiece extends Piece {
     }
 
     /**
+     * The function to return legalattack squares.
      * @return ArrayList<Square> for ImmobliePiece, cannot attack
      */
     @Override

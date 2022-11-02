@@ -4,15 +4,27 @@ package stratego;
  * A class to define Game and implement its functions.
  */
 public class Game {
+    /**
+     * Height of the chessboard.
+     */
     public static int HEIGHT = 10;
+    /**
+     * Width of the chessboard.
+     */
     public static int WIDTH = 10;
-    public static int[] WATER_ROWS = { 4, 5 };
-    public static int[] WATER_COLS = { 2, 3, 6, 7 };
+    /**
+     * Row number of the water area on the chessboard.
+     */
+    public static int[] WATER_ROWS = {4, 5};
+    /**
+     * Column number of the water area on the chessboard.
+     */
+    public static int[] WATER_COLS = {2, 3, 6, 7};
 
     private Player p0;
     private Player p1;
 
-    private static Square[][] GameBoard;
+    private Square[][] gameBoard = new Square[HEIGHT][WIDTH];
 
     /**
      * Constructor of Game and intialise the chessboard.
@@ -25,26 +37,29 @@ public class Game {
         this.p1 = p1;
         for (int i = 0; i < HEIGHT; i++) {
             for (int j = 0; j < WIDTH; j++) {
-                GameBoard[i][j] = new Square(this, i, j, IsWater(i, j));
+                gameBoard[i][j] = new Square(this, i, j, isInWater(i, j));
             }
         }
     }
 
     // public boolean setPiece(Player owner, int x, int y, int rank){
-    // if(GameBoard[x][y].getPiece() != null){
+    // if(gameBoard[x][y].getPiece() != null){
     // return false;
     // }
-    // GameBoard[x][y].placePiece(new Piece(owner, GameBoard[x][y], rank));
+    // gameBoard[x][y].placePiece(new Piece(owner, gameBoard[x][y], rank));
     // return true;
     // }
 
     /**
      * The function to see if the square unit belongs to water area.
+     * 
+     * @param x row number
+     * @param y column number
      * @return boolean
      */
-    public boolean IsWater(int x, int y) {
+    public boolean isInWater(int x, int y) {
         for (int i = 0; i < WATER_ROWS.length; i++) {
-            for (int j = 0; j < WATER_ROWS.length; j++) {
+            for (int j = 0; j < WATER_COLS.length; j++) {
                 if (x == i && y == j) {
                     return true;
                 }
@@ -55,6 +70,7 @@ public class Game {
 
     /**
      * The function to get current player.
+     * 
      * @param playerNumber return player according to the playernumber
      * @return Player
      */
@@ -68,6 +84,7 @@ public class Game {
 
     /**
      * The function to get winner.
+     * 
      * @return Player
      */
     public Player getWinner() {
@@ -82,6 +99,7 @@ public class Game {
 
     /**
      * The function to get the location of a square unit.
+     * 
      * @param row row number of a square
      * @param col column number of a square
      * @return Square
@@ -91,7 +109,7 @@ public class Game {
             if (row >= HEIGHT || row < 0 || col >= WIDTH || col < 0) {
                 return null;
             }
-            return GameBoard[row][col];
+            return gameBoard[row][col];
         } catch (Exception e) {
             throw new IllegalArgumentException();
         }
