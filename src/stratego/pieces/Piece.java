@@ -63,7 +63,7 @@ public abstract class Piece {
      * @param targetSquare the square where the target piece stands
      */
     public void attack(Square targetSquare) {
-        if (targetSquare.getPiece() == null || this instanceof Bomb || this instanceof Flag) {
+        if (targetSquare.getPiece() == null) {
             throw new IllegalArgumentException();
         } else {
             // attackSpy(targetSquare);
@@ -72,10 +72,14 @@ public abstract class Piece {
             // attackNormal(targetSquare);
             CombatResult temp = resultWhenAttacking(targetSquare.getPiece());
             if (temp == CombatResult.WIN) {
+                // if (targetSquare.getPiece() instanceof Flag){
+                //     targetSquare.getPiece().beCaptured();
+                // } else {
                 targetSquare.getPiece().beCaptured();
                 this.getSquare().removePiece();
                 targetSquare.placePiece(this);
                 this.setSquare(targetSquare);
+                //}
             }
             if (temp == CombatResult.LOSE) {
                 this.beCaptured();
@@ -157,7 +161,6 @@ public abstract class Piece {
             return CombatResult.DRAW;
         }
         if (targetPiece instanceof Flag) {
-            targetPiece.beCaptured();
             return CombatResult.WIN;
         } else {
             if (this.getRank() > targetPiece.getRank()) {
