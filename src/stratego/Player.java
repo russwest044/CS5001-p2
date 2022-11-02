@@ -25,7 +25,7 @@ public class Player {
      * @return String
      */
     public String getName() {
-        return this.name;
+        return name;
     }
 
     /**
@@ -33,7 +33,7 @@ public class Player {
      * @return int
      */
     public int getPlayerNumber() {
-        return this.playerNumber;
+        return playerNumber;
     }
 
     /**
