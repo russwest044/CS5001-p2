@@ -113,6 +113,13 @@ public class Game {
         return gameBoard[row][col];
     }
 
+    /**
+     * The function to get whether a square is legal in current game.
+     * 
+     * @param row row number of a square
+     * @param col column number of a square
+     * @return boolean
+     */
     public boolean isInBounds(int row, int col) {
         if (row < HEIGHT && row >= 0 && col < WIDTH && col >= 0) {
             return true;
