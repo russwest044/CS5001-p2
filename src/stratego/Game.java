@@ -113,8 +113,8 @@ public class Game {
         return gameBoard[row][col];
     }
 
-    public boolean isInBounds(Square square) {
-        if (square.getRow() < HEIGHT && square.getRow() >= 0 && square.getCol() < WIDTH && square.getCol() >= 0) {
+    public boolean isInBounds(int row, int col) {
+        if (row < HEIGHT && row >= 0 && col < WIDTH && col >= 0) {
             return true;
         }
         return false;
