@@ -83,6 +83,6 @@ public class Square {
      * @return boolean
      */
     public boolean canBeEntered() {
-        return !isWater;
+        return !isWater && this.getPiece() == null;
     }
 }
