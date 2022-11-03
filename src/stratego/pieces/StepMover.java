@@ -68,19 +68,19 @@ public class StepMover extends Piece {
         int y = this.getSquare().getCol();
 
         if (this.getSquare().getGame().isInBounds(x - 1, y)
-                && this.getSquare().getGame().getSquare(x - 1, y).canBeEntered()) {
+                && this.getSquare().getGame().getSquare(x - 1, y).getPiece() != null) {
             attackArea.add(this.getSquare().getGame().getSquare(x - 1, y));
         }
         if (this.getSquare().getGame().isInBounds(x + 1, y)
-                && this.getSquare().getGame().getSquare(x + 1, y).canBeEntered()) {
+                && this.getSquare().getGame().getSquare(x + 1, y).getPiece() != null) {
             attackArea.add(this.getSquare().getGame().getSquare(x + 1, y));
         }
         if (this.getSquare().getGame().isInBounds(x, y - 1)
-                && this.getSquare().getGame().getSquare(x, y - 1).canBeEntered()) {
+                && this.getSquare().getGame().getSquare(x, y - 1).getPiece() != null) {
             attackArea.add(this.getSquare().getGame().getSquare(x, y - 1));
         }
         if (this.getSquare().getGame().isInBounds(x, y + 1)
-                && this.getSquare().getGame().getSquare(x, y + 1).canBeEntered()) {
+                && this.getSquare().getGame().getSquare(x, y + 1).getPiece() != null) {
             attackArea.add(this.getSquare().getGame().getSquare(x, y + 1));
         }
 
