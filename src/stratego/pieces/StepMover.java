@@ -32,19 +32,19 @@ public class StepMover extends Piece {
         int x = this.getSquare().getRow();
         int y = this.getSquare().getCol();
 
-        if (this.getSquare().getGame().getSquare(x - 1, y) != null
+        if (this.getSquare().getGame().isInBounds(this.getSquare().getGame().getSquare(x - 1, y))
                 && this.getSquare().getGame().getSquare(x - 1, y).getPiece() == null) {
             moveArea.add(this.getSquare().getGame().getSquare(x - 1, y));
         }
-        if (this.getSquare().getGame().getSquare(x + 1, y) != null
+        if (this.getSquare().getGame().isInBounds(this.getSquare().getGame().getSquare(x + 1, y))
                 && this.getSquare().getGame().getSquare(x + 1, y).getPiece() == null) {
             moveArea.add(this.getSquare().getGame().getSquare(x + 1, y));
         }
-        if (this.getSquare().getGame().getSquare(x, y - 1) != null
+        if (this.getSquare().getGame().isInBounds(this.getSquare().getGame().getSquare(x, y - 1))
                 && this.getSquare().getGame().getSquare(x, y - 1).getPiece() == null) {
             moveArea.add(this.getSquare().getGame().getSquare(x, y - 1));
         }
-        if (this.getSquare().getGame().getSquare(x, y + 1) != null
+        if (this.getSquare().getGame().isInBounds(this.getSquare().getGame().getSquare(x, y + 1))
                 && this.getSquare().getGame().getSquare(x, y + 1).getPiece() == null) {
             moveArea.add(this.getSquare().getGame().getSquare(x, y + 1));
         }
@@ -67,19 +67,19 @@ public class StepMover extends Piece {
         int x = this.getSquare().getRow();
         int y = this.getSquare().getCol();
 
-        if (this.getSquare().getGame().getSquare(x - 1, y) != null
+        if (this.getSquare().getGame().isInBounds(this.getSquare().getGame().getSquare(x - 1, y))
                 && this.getSquare().getGame().getSquare(x - 1, y).getPiece() != null) {
             attackArea.add(this.getSquare().getGame().getSquare(x - 1, y));
         }
-        if (this.getSquare().getGame().getSquare(x + 1, y) != null
+        if (this.getSquare().getGame().isInBounds(this.getSquare().getGame().getSquare(x + 1, y))
                 && this.getSquare().getGame().getSquare(x + 1, y).getPiece() != null) {
             attackArea.add(this.getSquare().getGame().getSquare(x + 1, y));
         }
-        if (this.getSquare().getGame().getSquare(x, y - 1) != null
+        if (this.getSquare().getGame().isInBounds(this.getSquare().getGame().getSquare(x, y - 1))
                 && this.getSquare().getGame().getSquare(x, y - 1).getPiece() != null) {
             attackArea.add(this.getSquare().getGame().getSquare(x, y - 1));
         }
-        if (this.getSquare().getGame().getSquare(x, y + 1) != null
+        if (this.getSquare().getGame().isInBounds(this.getSquare().getGame().getSquare(x, y + 1))
                 && this.getSquare().getGame().getSquare(x, y + 1).getPiece() != null) {
             attackArea.add(this.getSquare().getGame().getSquare(x, y + 1));
         }
