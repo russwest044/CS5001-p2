@@ -114,7 +114,7 @@ public class Game {
     }
 
     public boolean isInBounds(Square square) {
-        if (square.getRow() >= HEIGHT && square.getRow() < 0 && square.getCol() >= WIDTH && square.getCol() < 0) {
+        if (square.getRow() < HEIGHT && square.getRow() >= 0 && square.getCol() < WIDTH && square.getCol() >= 0) {
             return true;
         }
         return false;
