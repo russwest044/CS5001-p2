@@ -107,12 +107,8 @@ public class Game {
      * @return Square
      */
     public Square getSquare(int row, int col) {
-        try {
-            if (row >= HEIGHT || row < 0 || col >= WIDTH || col < 0) {
-                throw new IndexOutOfBoundsException();
-            }
-        } catch (IndexOutOfBoundsException e) {
-            return null;
+        if (row >= HEIGHT || row < 0 || col >= WIDTH || col < 0) {
+            throw new IndexOutOfBoundsException();
         }
         return gameBoard[row][col];
     }
