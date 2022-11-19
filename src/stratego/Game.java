@@ -7,19 +7,19 @@ public class Game {
     /**
      * Height of the chessboard.
      */
-    public static int HEIGHT = 10;
+    public static final int HEIGHT = 10;
     /**
      * Width of the chessboard.
      */
-    public static int WIDTH = 10;
+    public static final int WIDTH = 10;
     /**
      * Row number of the water area on the chessboard.
      */
-    public static int[] WATER_ROWS = {4, 5};
+    public static final int[] WATER_ROWS = {4, 5};
     /**
      * Column number of the water area on the chessboard.
      */
-    public static int[] WATER_COLS = {2, 3, 6, 7};
+    public static final int[] WATER_COLS = {2, 3, 6, 7};
 
     private Player p0;
     private Player p1;
